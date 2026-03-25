@@ -1107,7 +1107,10 @@ tr:hover {
 
 const SUPABASE_URL = 'https://jmdtqsmfhzifgbjcmksk.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImptZHRxc21maHppZmdiamNta3NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMjA2MjEsImV4cCI6MjA4OTU5NjYyMX0.WSoN8u2j2Dtpt4RDqj6kh8imvJf4ZaNQINVf0C5qt7c';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+let supabase = null;
+if (window.supabase) {
+  supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+}
 
 // ═══════════════════════════════════════════════════════════
 //  DADOS GLOBAIS
